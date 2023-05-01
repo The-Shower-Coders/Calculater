@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="Styles/Style.css" />
+        <script src="Script/Script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <title>Calculater</title>
+    </head>
+    <body>
+        <div id="outer-screen" class="dynamic-color">
+            <div id="mode-toggle" class="dynamic-color">
+                <div id="mode-light" onclick="doLight()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-sun dynamic-color" viewBox="0 0 16 16"> <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/> </svg>
+                </div>
+                <div id="mode-night" class="active " onclick="doNight()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="dynamic-color" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3c0 98 62.8 181.4 150.4 211.7c-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256C0 379.7 100 480 223.5 480c47.8 0 92-15 128.4-40.6c1.9-1.3 3.7-2.7 5.5-4c4.8-3.6 9.4-7.4 13.9-11.4c2.7-2.4 5.3-4.8 7.9-7.3c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7 .6-7.4 1.2-11.1 1.6c-5 .5-10.1 .9-15.3 1c-1.2 0-2.5 0-3.7 0c-.1 0-.2 0-.3 0c-96.8-.2-175.2-78.9-175.2-176c0-54.8 24.9-103.7 64.1-136c1-.9 2.1-1.7 3.2-2.6c4-3.2 8.2-6.2 12.5-9c3.1-2 6.3-4 9.6-5.8c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6c-2.7-.1-5.5-.1-8.2-.1c-3.3 0-6.5 .1-9.8 .2c-2.3 .1-4.6 .2-6.9 .4z"/></svg>
+                </div>
+            </div>
+
+            <div id="out">
+                <label id="out-math" class="dynamic-color">
+                    5 x 5
+                </label>
+                <div id="out-result" class="dynamic-color">
+                    125
+                </div>
+            </div>
+            <div id="input" class="dynamic-color">  
+                <div class="input-row">
+                    <div onclick="clearOutMath()" class="input-item dynamic-color"><p class="dynamic-color">C</p></div>
+                    <div onclick="updateOutMath(' / ')" class="input-item dynamic-color"><p class="dynamic-color">/</p></div>
+                    <div onclick="updateOutMath(' x ')"class="input-item dynamic-color"><p class="dynamic-color">x</p></div>
+                    <div onclick="removeOutMath()"class="input-item dynamic-color"><p class="dynamic-color">&lt;</p></div>
+                </div>
+                <div class="input-row">
+                    <div onclick="updateOutMath('7')"class="input-item dynamic-color"><p class="dynamic-color">7</p></div>
+                    <div onclick="updateOutMath('8')"class="input-item dynamic-color"><p class="dynamic-color">8</p></div>
+                    <div onclick="updateOutMath('9')"class="input-item dynamic-color"><p class="dynamic-color">9</p></div>
+                    <div onclick="updateOutMath(' - ')"class="input-item dynamic-color"><p class="dynamic-color">-</p></div>
+                </div>
+                <div class="input-row">
+                    <div onclick="updateOutMath('4')"class="input-item dynamic-color"><p class="dynamic-color">4</p></div>
+                    <div onclick="updateOutMath('5')"class="input-item dynamic-color"><p class="dynamic-color">5</p></div>
+                    <div onclick="updateOutMath('6')"class="input-item dynamic-color"><p class="dynamic-color">6</p></div>
+                    <div onclick="updateOutMath(' + ')"class="input-item dynamic-color"><p class="dynamic-color">+</p></div>
+                </div>
+                <div class="input-row">
+                    <div onclick="updateOutMath('1')"class="input-item dynamic-color"><p class="dynamic-color">1</p></div>
+                    <div onclick="updateOutMath('2')"class="input-item dynamic-color"><p class="dynamic-color">2</p></div>
+                    <div onclick="updateOutMath('3')"class="input-item dynamic-color"><p class="dynamic-color">3</p></div>
+                    <div onclick="updateOutMath(' % ')"class="input-item dynamic-color"><p class="dynamic-color">%</p></div>
+                </div>
+                <div class="input-row">
+                    <div onclick="updateOutMath('0')"class="input-item dynamic-color"><p class="dynamic-color">0</p></div>
+                    <div onclick="updateOutMath('00')"class="input-item dynamic-color"><p class="dynamic-color">00</p></div>
+                    <div onclick="help()"class="input-item dynamic-color"><p class="dynamic-color">?</p></div>
+                    <div onclick="saveResult()" class="input-item dynamic-color"><p class="dynamic-color">=</p></div>
+                </div>
+                <div class="input-row">
+                    <div id="line"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

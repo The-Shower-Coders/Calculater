@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    background-color: #e7e7e7;
+}
+
+/* General CSS */
+#outer-screen {
+    width: 300px;
+    height: 650px;
+    background-color: rgb(34, 37, 45);
+    border-radius: 20px;
+    margin-left: calc(50vw - 150px);
+    margin-top: calc(50vh - 325px);
+}
+
+/* --- TOGGLE [ LIGHT - NIGHT ] ------------------------ */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+#mode-toggle {
+    width: 90px;
+    height: 40px;
+    background-color: rgb(41, 45, 54);
+    margin-left: 105px;
+    transform: translateY(20px);
+    border-radius: 10px;
+    display: flex;
+}
+
+#mode-light {
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+
+#mode-night {
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+
+.active {
+    background-color: rgb(71, 75, 82);
+    border-radius: 10px;
+    animation: showup 1s linear 1 alternate;
+}
+
+@keyframes showup {
+    from {
+        background-color: rgb(34, 37, 45);
+    }
+    to {
+        background-color: rgb(71, 75, 82);
+    }
+}
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* --- RESULT AREA ------------------------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+#out {
+    width: 300px;
+    height: 40px;
+    margin-top: 150px;
+    text-align: right;
+}
+
+#out-math {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    height: 40px;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    user-select: none;
+}
+
+/* Firefox */
+#out-math {
+    scrollbar-width: thin;
+    scrollbar-color: #636c82;
+}
+
+/* Chrome, Edge and Safari */
+#out-math::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#out-math::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #636c82;
+}
+
+#out-math::-webkit-scrollbar-thumb:hover {
+    background-color: #636c82;
+}
+
+#out-math::-webkit-scrollbar-thumb:active {
+    background-color: #636c82;
+}
+
+#out-result {
+    margin-right: 10px;
+    font-size: 70px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    user-select: none;
+}
+
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+/* --- INPUT AREA -------------------------------------- */
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+#input {
+    margin-top: 100px;
+    height: 320px;
+    width: 300px;
+    border-radius: 18px;
+    background-color: #292d36;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 14px;
+}
+
+.input-item {
+    font-size: 20px;
+    height: 40px;
+    width: 56px;
+    background-color: #444b59;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.input-item > p {
+    text-align: center;
+    color: #26e9c6;
+}
+
+#line {
+    background-color: #474b52;
+    width: 200px;
+    height: 5px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.dynamic-color {
+    transition: background-color 1s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
